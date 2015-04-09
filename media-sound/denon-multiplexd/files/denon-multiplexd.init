@@ -2,7 +2,7 @@
 
 start() {
   ebegin "Starting Denon Connection Multiplexer"
-  start-stop-daemon -S -m -p /var/run/denon-multiplexd.pid -1 /dev/null -2 /dev/null --quiet -u nobody -N -5 -b --exec /usr/sbin/denon-multiplexd
+  start-stop-daemon --start --make-pidfile --pidfile /var/run/denon-multiplexd.pid -1 /dev/null -2 /dev/null --quiet --user nobody --background --exec /usr/sbin/denon-multiplexd ${receiver_address}
   eend $?
 }
 
