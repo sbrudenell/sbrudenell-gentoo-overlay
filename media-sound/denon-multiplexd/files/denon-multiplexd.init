@@ -1,0 +1,13 @@
+#!/sbin/runscript
+
+start() {
+  ebegin "Starting Denon Connection Multiplexer"
+  start-stop-daemon -S -m -p /var/run/denon-multiplexd.pid -1 /dev/null -2 /dev/null --quiet -u nobody -N -5 -b --exec /usr/sbin/denon-multiplexd
+  eend $?
+}
+
+stop() {
+  ebegin "Stopping Denon Connection Multiplexer"
+  start-stop-daemon --stop --pidfile /var/run/denon-multiplexd.pid --quiet --exec /usr/sbin/denon-multiplexd
+  eend $?
+}
