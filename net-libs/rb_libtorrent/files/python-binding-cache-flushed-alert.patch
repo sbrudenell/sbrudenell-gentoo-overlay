@@ -1,0 +1,15 @@
+diff --git a/bindings/python/src/alert.cpp b/bindings/python/src/alert.cpp
+index 5d1dc62..6065ee4 100644
+--- a/bindings/python/src/alert.cpp
++++ b/bindings/python/src/alert.cpp
+@@ -652,6 +652,10 @@ void bind_alert()
+ #endif
+     ;
+ 
++    class_<cache_flushed_alert, bases<torrent_alert>, noncopyable>(
++        "cache_flushed_alert", no_init)
++    ;
++
+     class_<anonymous_mode_alert, bases<torrent_alert>, noncopyable>(
+         "anonymous_mode_alert", no_init)
+         .def_readonly("kind", &anonymous_mode_alert::kind)
