@@ -6,8 +6,8 @@ EAPI=6
 
 inherit eutils user systemd unpacker
 
-MINOR1="2987"
-MINOR2="1bef33a"
+MINOR1="3059"
+MINOR2="6277334"
 
 _APPNAME="plexmediaserver"
 _USERNAME="plex"
